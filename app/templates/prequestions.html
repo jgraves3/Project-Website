@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Pre-survey Questions</h1>
+<form action="", method = "post", novalidate>
+	{{ form.hidden_tag() }}
+	<p>
+		{{ form.age.label }}<br>
+		{{ form.age() }}
+	</p>
+	<p> 
+		{{ form.gender.label }}<br>
+		{% for choice in form.gender.choices %}
+			<p>{{ choice }}</p>
+		{% endfor %}
+	</p>
+</form>
+{% endblock %}
