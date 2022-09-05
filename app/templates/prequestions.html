@@ -10,9 +10,22 @@
 	</p>
 	<p> 
 		{{ form.gender.label }}<br>
-		{% for choice in form.gender.choices %}
-			<p>{{ choice }}</p>
-		{% endfor %}
+		<p>{{ form.gender() }}</p>
+	</p>
+	<p>
+		{{ form.education.label }}<br>
+		<p>{{ form.education() }}</p>
+	</p>
+	<p class="ifEducation">
+		{{ form.major.label }}<br>
+		<p>{{ form.major() }}</p>
+	</p>
+	<p>
+		{{ form.timeSpent.label }}<br>
+		<p>{{ form.timeSpent() }}</p>
+	</p>
+	<p>
+		{{ form.submit() }}
 	</p>
 </form>
 {% endblock %}

@@ -1,9 +1,9 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField, RadioField, SelectField, SubmitField
-from wtforms.validators import DataRequired, Optional
+from wtforms.validators import DataRequired, Optional, NumberRange
 
 class TakerInfoForm(FlaskForm):
-    age = IntegerField(label='Age: ', validators = [Optional()])
+    age = IntegerField(label='Age: ', validators = [Optional(), NumberRange(18, 100)])
     #Change to a radio field
     gender = SelectField(label = 'Gender: ', choices=['Male', 'Female', 'Non-Binary'], validators=[Optional()])
     education = SelectField(label='Highest level of education you have achieved: ', choices=[('high school', 'High School/GED'),
