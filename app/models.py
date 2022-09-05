@@ -10,3 +10,19 @@ class Prequestions(db.Model):
 
    def __repr__(self):
        return '{}, {}, {}, {}, {}'.format(self.age, self.gender, self.education, self.major, self.timeSpent)
+
+class Facebook(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    usage = db.Column(db.Boolean, nullable=False)
+class Google(db.Model):
+    id = db.Column(db.Integer, db.ForeignKey('prequestions.id'), primary_key=True)
+    usage = db.Column(db.Boolean, nullable=False)
+class Microsoft(db.Model):
+    id = db.Column(db.Integer, db.ForeignKey('prequestions.id'), primary_key=True)
+    usage = db.Column(db.Boolean, nullable=False)
+class Twitter(db.Model):
+    id = db.Column(db.Integer, db.ForeignKey('prequestions.id'), primary_key=True)
+    usage = db.Column(db.Boolean, nullable=False)
+class Amazon(db.Model):
+    id = db.Column(db.Integer, db.ForeignKey('prequestions.id'), primary_key=True)
+    usage = db.Column(db.Boolean, nullable=False)
