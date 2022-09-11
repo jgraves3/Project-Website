@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, RadioField, SelectField, SubmitField, BooleanField
+from wtforms import StringField, IntegerField, RadioField, SelectField, SubmitField, BooleanField, TextAreaField
 from wtforms.validators import DataRequired, Optional, NumberRange
 
 class TakerInfoForm(FlaskForm):
@@ -34,10 +34,19 @@ class FacebookForm(FlaskForm):
                                        (5, '5 hours or more')
                                        ],
                             validators = [DataRequired()])
+    purpose = TextAreaField(label='What is (in your opinion) the purpose of Facebook?')
+    harm = RadioField(label = 'Facebook is harmful to the general public.',
+                       choices=[(1, 'Strongly Disagree'),
+                                (2, 'Disagree'),
+                                (3, 'Neutral'),
+                                (4, 'Agree'),
+                                (5, 'Strongly Agree')
+                                ]
+                       )
+    whyHarm = TextAreaField(label='Please explain why your response to the previous question.')
 
 class GoogleForm(FlaskForm):
     usage = BooleanField(label='Do you use Google (Google Search, Google Maps, Google Images, etc.)?', validators = [DataRequired()])
-
 class MicrosoftForm(FlaskForm):
     usage = BooleanField(label='Do you use Microsoft\'s services (Windows, Xbox Live, etc.)?', validators = [DataRequired()])
 

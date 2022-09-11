@@ -14,6 +14,24 @@
 			{{ form.timeSpent.label }}
 			{{ form.timeSpent() }}
 		</p>
-
+		<p>
+			{{ form.purpose.label }}
+		</p>
+		<p>
+			{{ form.purpose() }}
+		</p>
+		<p>For the following multiple-choice questions, please choose the answer you most agree with in response to the statement given.</p>
+		<p>
+			<i>{{ form.harm.label }}.</i>
+			<div class="likert">
+			{% for subfield in form.harm %}
+				<tr>
+					<td>{{ subfield.label }}</td>
+					<td>{{ subfield }}</td>
+				</tr>
+				<p></p>
+			{% endfor %}
+			</div>
+		</p>
 	</form>
 {% endblock %}

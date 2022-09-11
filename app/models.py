@@ -14,6 +14,10 @@ class Prequestions(db.Model):
 class Facebook(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     usage = db.Column(db.Boolean, nullable=False)
+    purpose = db.Column(db.Text, nullable=True)
+    harm = db.Column(db.Integer, nullable=True)
+    whyHarm = db.Column(db.Text, nullable=True)
+
 class Google(db.Model):
     id = db.Column(db.Integer, db.ForeignKey('prequestions.id'), primary_key=True)
     usage = db.Column(db.Boolean, nullable=False)

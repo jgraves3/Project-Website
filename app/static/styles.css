@@ -1,0 +1,30 @@
+body {
+	margin: 30px auto;
+	background-color: #b2c1d1;
+}
+textarea {
+	width: 700px ;
+	height: 200px;
+	resize: none;
+}
+.question {
+
+}
+.table td {
+	text-align: center;
+	border-top: 3px solid white;
+	display: block
+}
+.container {
+	background-color: white;
+	border-radius: 25px;
+	padding: 3%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.content {
+	background-color: #b2c;
+	width = 90%;
+	border-radius: 0px;
+	padding-left: 20px;
+}

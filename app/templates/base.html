@@ -2,9 +2,13 @@
 
 {% block title %}
 {% endblock %}
-
+{% block head %}
+	<link rel="stylesheet" href="static/styles.css">
+{% endblock %}
 {% block content %}
 	<div class = "container">
+		<div class="content">
 		{% block app_content %}{% endblock %}
+		</div>
 	</div>
 {% endblock %}
