@@ -1,14 +1,17 @@
 body {
 	margin: 30px auto;
-	background-color: #b2c1d1;
+	background-color: #626880;
 }
-textarea {
-	width: 700px ;
+form textarea {
+	width: 100% ;
 	height: 200px;
 	resize: none;
+	overflow: none;
+	box-sizing: border-box;
 }
-.question {
-
+.submitButton {
+	align-content: center;
+	text-align: center;
 }
 .table td {
 	text-align: center;
@@ -23,8 +26,27 @@ textarea {
 	margin-right: 5%;
 }
 .content {
-	background-color: #b2c;
+	/*background-color: #b2c;*/
 	width = 90%;
 	border-radius: 0px;
 	padding-left: 20px;
+}
+.likert {
+	margin-top: 20px;
+	font-size: 15px;
+	margin-left: 25px;
+	margin-bottom: 35px;
+}
+.textResponse {
+	margin-left: 25px;
+	font-size: 15px;
+}
+.timeSpent {
+	/*margin-left: 20px;*/
+}
+.blockP {
+	overflow: hidden;
+	white-space: nowrap;
+	clear: both;
+	display: inline-block;
 }

@@ -43,12 +43,30 @@ class FacebookForm(FlaskForm):
                                 (5, 'Strongly Agree')
                                 ]
                        )
-    whyHarm = TextAreaField(label='Please explain why your response to the previous question.')
-
+    whyHarm = TextAreaField(label='Please explain your response to the previous question.')
+    service = RadioField(label = 'Facebook acts in service to the public good.', 
+                         choices = [(1, 'Strongly Disagree'),
+                                    (2, 'Disagree'), 
+                                    (3, 'Neutral'), 
+                                    (4, 'Agree'),
+                                    (5, 'Strongly Agree')
+                                    ]
+                         )
+    whyService = TextAreaField(label='Please explain your response to the previous question.')
+    privacy = RadioField(label='Facebook respects the privacy of its users.', 
+                            choices = [(1, 'Strongly Disagree'),
+                                       (2, 'Disagree'),
+                                       (3, 'Neutral'),
+                                       (4, 'Agree'),
+                                       (5, 'Strongly Agree')
+                                       ]
+                            )
+    whyPrivacy = TextAreaField('Please explain your response to the previous question.')
+    submit = SubmitField('Next Page')
 class GoogleForm(FlaskForm):
     usage = BooleanField(label='Do you use Google (Google Search, Google Maps, Google Images, etc.)?', validators = [DataRequired()])
 class MicrosoftForm(FlaskForm):
-    usage = BooleanField(label='Do you use Microsoft\'s services (Windows, Xbox Live, etc.)?', validators = [DataRequired()])
+    usage = BooleanField(label='Do you use Microsoft\'s services (Windows, Microsoft Teams, etc.)?', validators = [DataRequired()])
 
 class TwitterForm(FlaskForm):
     usage = BooleanField(label='Do you use Twitter?', validators = [DataRequired()])
