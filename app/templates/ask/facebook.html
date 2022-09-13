@@ -6,14 +6,9 @@
 	
 	<form action="", method="post", novalidate>
 		{{ form.hidden_tag() }}
+
 		<p>
-			{{ form.usage.label }}
-			{{ form.usage() }}
-		</p>
-		<p class = "blockP">
-			<p class = "timeSpent"> 
 				{{ form.timeSpent.label }}
-			</p>
 			{{ form.timeSpent() }}
 		</p>
 		<p>

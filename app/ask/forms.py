@@ -4,7 +4,7 @@ from wtforms.validators import DataRequired, Optional, NumberRange
 
 class TakerInfoForm(FlaskForm):
     age = IntegerField(label='Age: ', validators = [Optional(), NumberRange(18, 100)])
-    #Change to a radio field
+    #Change to a radio field?
     gender = SelectField(label = 'Gender: ', choices=['Male', 'Female', 'Non-Binary'], validators=[Optional()])
     education = SelectField(label='Highest level of education you have achieved: ', choices=[('high school', 'High School/GED'),
                                                                                             ('some college', 'Some College'),
@@ -21,12 +21,37 @@ class TakerInfoForm(FlaskForm):
                                        (5, '5 hours or less'), 
                                        (6, '6 hours or less'),
                                        (7, '7 or more hours')],
-                            validators = [DataRequired()])
-    # ADD THE 'Do you use ...' QUESTIONS HERE FOR EASIER DEV WORK 
+                            )
+    # ADD THE 'Do you use ...' QUESTIONS HERE FOR EASIER DEV WORK
+    useFacebook = BooleanField(label='Do you use Facebook or Facebook services?', 
+                             # choices = [(True, 'Yes'),
+                             #            (False, 'No')
+                             #            ],
+                              )
+    useGoogle = BooleanField(label='Do you use Google services?', 
+                             #choices = [(True, 'Yes'),
+                             #          (False, 'No')
+                             #          ],
+                            )
+    useMicrosoft = BooleanField(label='Do you use Microsoft services?',
+                              # choices = [(True, 'Yes'), 
+                               #           (False, 'No')
+                               #           ],
+                            )
+    useTwitter = BooleanField(label='Do you use Twitter?', 
+                            #choices = [(True, 'Yes'),
+                             #          (False, 'No')
+                              #         ],
+                             )
+    useAmazon = BooleanField(label='Do you use Amazon services?', 
+                           # choices = [(True, 'Yes'), 
+                            #           (False, 'No')
+                             #          ],
+                            )
     submit = SubmitField('Next Page')
 
 class FacebookForm(FlaskForm):
-    usage = BooleanField(label='Do you use Facebook or Instagram?', validators=[DataRequired()])
+   # usage = BooleanField(label='Do you use Facebook or Instagram?', validators=[DataRequired()])
     timeSpent = SelectField(label='How much time do you spend on average using Facebook (or Instagram)?', 
                             choices = [(1, '1 hour or less'),
                                        (2, '2 hours or less'), 
@@ -65,7 +90,7 @@ class FacebookForm(FlaskForm):
     whyPrivacy = TextAreaField('Please explain your response to the previous question.')
     submit = SubmitField('Next Page')
 class GoogleForm(FlaskForm):
-    usage = BooleanField(label='Do you use Google (Google Search, Google Maps, Google Images, etc.)?', validators = [DataRequired()])
+    #usage = BooleanField(label='Do you use Google (Google Search, Google Maps, Google Images, etc.)?', validators = [DataRequired()])
     timeSpent = SelectField(label='How much time do you spend on average using Google (Google Search, Google Maps, Google Images, etc.)?', 
                             choices = [(1, '1 hour or less'),
                                        (2, '2 hours or less'), 
@@ -104,7 +129,7 @@ class GoogleForm(FlaskForm):
     whyPrivacy = TextAreaField('Please explain your response to the previous question.')
     submit = SubmitField('Next Page')
 class MicrosoftForm(FlaskForm):
-    usage = BooleanField(label='Do you use Microsoft\'s services (Windows, Microsoft Teams, etc.)?', validators = [DataRequired()])
+    #usage = BooleanField(label='Do you use Microsoft\'s services (Windows, Microsoft Teams, etc.)?', validators = [DataRequired()])
     timeSpent = SelectField(label='How much time do you spend on average using Microsoft\'s services (Windows, Teams, etc.)?', 
                             choices = [(1, '1 hour or less'),
                                        (2, '2 hours or less'), 
@@ -143,7 +168,7 @@ class MicrosoftForm(FlaskForm):
     whyPrivacy = TextAreaField('Please explain your response to the previous question.')
     submit = SubmitField('Next Page')
 class TwitterForm(FlaskForm):
-    usage = BooleanField(label='Do you use Twitter?', validators = [DataRequired()])
+    #usage = BooleanField(label='Do you use Twitter?', validators = [DataRequired()])
     timeSpent = SelectField(label='How much time do you spend on average using Twitter?', 
                             choices = [(1, '1 hour or less'),
                                        (2, '2 hours or less'), 
@@ -182,7 +207,7 @@ class TwitterForm(FlaskForm):
     whyPrivacy = TextAreaField('Please explain your response to the previous question.')
     submit = SubmitField('Next Page')
 class AmazonForm(FlaskForm):
-    usage = BooleanField(label='Do you use Amazon?', validators = [DataRequired()])
+    #usage = BooleanField(label='Do you use Amazon?', validators = [DataRequired()])
     timeSpent = SelectField(label='How much time do you spend on average using Amazon?', 
                             choices = [(1, '1 hour or less'),
                                        (2, '2 hours or less'), 

@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+	<h1>Microsoft Questions</h1>
+	
+	<form action="", method="post", novalidate>
+		{{ form.hidden_tag() }}
+		<p>
+				{{ form.timeSpent.label }}
+			{{ form.timeSpent() }}
+		</p>
+		<p>
+			{{ form.purpose.label }}
+		</p>
+		<p class = "textResponse">
+			{{ form.purpose() }}
+		</p>
+		<p><b>For the following multiple-choice questions, please choose the answer you most agree with in response to the statement given.</b></p>
+		<p> <!-- Harm -->
+			<i>{{ form.harm.label }}</i>
+			<div class="likert">
+			{% for subfield in form.harm %}
+				<tr>
+					<td>{{ subfield }}</td>
+					<td>{{ subfield.label }}</td>
+				</tr>
+				<p></p>
+			{% endfor %}
+			</div>
+		</p>
+		<div class="textResponse">
+			<p>
+				{{ form.whyHarm.label }}
+			</p>
+			<p>
+				{{ form.whyHarm() }}
+			</p>
+		</div>
+		<p><br></p> <!-- End Harm -->
+		
+		<p> <!-- Service -->
+		<i>{{ form.service.label }}</i>
+		<div class = "likert">
+			{% for subfield in form.service %}
+			<tr>
+				<td>{{ subfield }}</td>
+				<td>{{ subfield.label }}</td>
+			</tr>
+			<p></p>
+				{% endfor %}
+			</div>
+		</p>
+		<div class = "textResponse">
+			<p>
+				{{ form.whyService.label }}
+			</p>
+			<p>
+				{{ form.whyService() }}
+			</p>
+		</div>
+		<p><br></p> <!-- End Service -->
+
+		<p>
+			<i>{{ form.privacy.label }}</i>
+			<div class = "likert">
+				{% for subfield in form.privacy %}
+				<tr>
+					<td>{{ subfield }}</td>
+					<td>{{ subfield.label }}</td>
+				</tr>
+				<p></p>
+				{% endfor %}
+			</div>
+			<div class = "textResponse">
+				<p>
+					{{ form.whyPrivacy.label }}
+				</p>
+				<p>
+					{{ form.whyPrivacy() }}
+				</p>
+			</div>
+		</p>
+		<p><br></p> <!-- End Privacy -->
+		<div class="submitButton">
+			{{ form.submit() }}
+		</div>
+		
+
+	</form>
+{% endblock %}
